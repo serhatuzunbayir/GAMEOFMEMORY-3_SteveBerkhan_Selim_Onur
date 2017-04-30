@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAMEOFMEMORY-3_SteveBerkhan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAMEOFMEMORY-3_SteveBerkhan_Selim_Onur", "Assembly-CSharp-Editor.csproj", "{03FDE21D-5D1A-5E30-8135-AF471980CA7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAMEOFMEMORY-3_SteveBerkhan_Selim_Onur", "Assembly-UnityScript.unityproj", "{610DCA0B-CA6D-D26F-2FA2-BC657DD0DD52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{03FDE21D-5D1A-5E30-8135-AF471980CA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03FDE21D-5D1A-5E30-8135-AF471980CA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03FDE21D-5D1A-5E30-8135-AF471980CA7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{610DCA0B-CA6D-D26F-2FA2-BC657DD0DD52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{610DCA0B-CA6D-D26F-2FA2-BC657DD0DD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{610DCA0B-CA6D-D26F-2FA2-BC657DD0DD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{610DCA0B-CA6D-D26F-2FA2-BC657DD0DD52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
