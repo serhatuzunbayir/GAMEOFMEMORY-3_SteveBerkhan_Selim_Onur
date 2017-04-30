@@ -8,7 +8,7 @@ public class Card : MonoBehaviour {
 
 	public int type = -1;
 
-	private bool flipped = false;
+	public bool flipped = false;
 
 	public int rotation;
 
@@ -56,12 +56,14 @@ public class Card : MonoBehaviour {
 		flipped = !flipped;
 
 		if (flipped == true) {
-		
-			Invoke ("Flip" , 2);
 
+			gameObject.GetComponent<Collider> ().enabled = false;
+			Invoke ("Flip", 2);
 
 		
-		}	
+		} else {
+			gameObject.GetComponent<Collider> ().enabled = true;
+		}
 	
 	}
 
