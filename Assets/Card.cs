@@ -12,13 +12,13 @@ public class Card : MonoBehaviour {
 
 	private float startAngle;
 
-	private float targetAngle;
+	public float targetAngle;
 
 	private float startTime;
 
 	public float smooth = 2.0f;
 
-	private float angle;
+	public float angle;
 
 
 	void Start(){

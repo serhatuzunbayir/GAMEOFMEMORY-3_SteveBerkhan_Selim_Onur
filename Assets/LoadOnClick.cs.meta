@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 48e079ad76cfa914ebd59f335dfcc62d
-timeCreated: 1493563979
+timeCreated: 1493773107
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - bg: {fileID: 1798839507955914, guid: 081fcedf804d40a4e98ccf13eb58805c, type: 2}
+  - startButton: {fileID: 1465266868679454, guid: a26e240576349464a9c41529aaf7c3a3,
+      type: 2}
   - sprite1: {fileID: 21300000, guid: 12795887940ee8f4e9bc8e65418243bc, type: 3}
   - sprite2: {fileID: 21300000, guid: b2d5b69c6d8c3a44fa29f75f3e33efcf, type: 3}
   executionOrder: 0

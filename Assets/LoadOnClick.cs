@@ -43,4 +43,20 @@ public class LoadOnClick : MonoBehaviour {
 	public void ExitGame(){
 		Application.Quit (); //When the button clicked, quit the game
 	}
+
+	public bool getStartButton(){
+		return true;
+	}
+
+	public bool getExitButton(){
+		return true;
+	}
+
+	public bool getRestartButton(){
+		return true;
+	}
+
+	public bool getEscapeButton(){
+		return true;
+	}
 }

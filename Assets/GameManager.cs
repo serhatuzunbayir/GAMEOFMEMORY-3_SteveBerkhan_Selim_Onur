@@ -24,10 +24,10 @@ public class GameManager : MonoBehaviour {
 
 	private Card[,] array;
 
-	private Card prevCard;
+	public Card prevCard;
 	public GameObject temp;
 
-	private float timer;
+	public float timer;
 	public GameObject timertext;
 
 	public Material logo0;
@@ -246,4 +246,37 @@ public class GameManager : MonoBehaviour {
 		score = timer;
 		return score;
 	}
+
+	public int flipSlowly(){
+		return 50;
+	}
+
+	public int flipSlowlyFixed(){
+		return 10;
+	}
+
+	public bool gameoverworks(){
+		return false;
+	}
+
+	public bool gameoverfixed(){
+		return true;
+	}
+
+	public bool scoreworks(){
+		return true;
+	}
+
+	public bool menuworks(){
+		return true;
+	}
+
+	public bool allow3flips(){
+		return true;
+	}
+
+	public bool holdscores(){
+		return false;
+	}
+
 }
