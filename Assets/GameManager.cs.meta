@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2f7824353905e024a90353f656494d31
-timeCreated: 1493569681
+timeCreated: 1494253466
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
@@ -8,8 +8,14 @@ MonoImporter:
   - scoreText: {instanceID: 0}
   - restartText: {instanceID: 0}
   - gameOverText: {instanceID: 0}
+  - testobject: {fileID: 1969883179504616, guid: f11c57b1f9647f149bebe2698235d220,
+      type: 2}
   - cardPrefab: {fileID: 100000, guid: 85ce448611c2450439cc8dbb6f6ddfb5, type: 2}
+  - cardPrefab2: {instanceID: 0}
   - timerText: {instanceID: 0}
+  - prevCard: {instanceID: 0}
+  - current: {instanceID: 0}
+  - temp: {instanceID: 0}
   - timertext: {instanceID: 0}
   - logo0: {fileID: 2100000, guid: 18e41b5efa73fbd439a44e5fb1ccbfd0, type: 2}
   - logo1: {fileID: 2100000, guid: d6447da103f47354eb40cbecb51843a1, type: 2}
@@ -19,6 +25,14 @@ MonoImporter:
   - logo5: {fileID: 2100000, guid: c540318992475c94dab84e1f74622d27, type: 2}
   - logo6: {fileID: 2100000, guid: 86d6ae6b656e474468003fb333abb6a6, type: 2}
   - logo7: {fileID: 2100000, guid: 611d709dccb8b344daf62d530a9a4dac, type: 2}
+  - logo10: {instanceID: 0}
+  - logo11: {instanceID: 0}
+  - logo12: {instanceID: 0}
+  - logo13: {instanceID: 0}
+  - logo14: {instanceID: 0}
+  - logo15: {instanceID: 0}
+  - logo16: {instanceID: 0}
+  - logo17: {instanceID: 0}
   - background: {fileID: 1798839507955914, guid: 081fcedf804d40a4e98ccf13eb58805c,
       type: 2}
   - sprite1: {fileID: 21300000, guid: 12795887940ee8f4e9bc8e65418243bc, type: 3}

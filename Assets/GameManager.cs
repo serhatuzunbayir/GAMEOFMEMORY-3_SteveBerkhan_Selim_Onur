@@ -11,8 +11,12 @@ public class GameManager : MonoBehaviour {
 
 	private bool gameOver;
 	private bool restart;
+	public bool restartbuttonworked;
 	private float score;
 
+	public GameObject testobject;
+	public GameObject testobject2;
+	public GameObject testobject3;
 	public GameObject cardPrefab;
 	public GameObject cardPrefab2;
 
@@ -23,8 +27,11 @@ public class GameManager : MonoBehaviour {
 	private int typeCount = 0;
 
 	private Card[,] array;
+	public float[] scorelist;
 
 	public Card prevCard;
+	public Card current;
+
 	public GameObject temp;
 
 	public float timer;
@@ -190,7 +197,7 @@ public class GameManager : MonoBehaviour {
 
 			if (Physics.Raycast (Camera.main.transform.position, ray.direction , out hit )) { //When the raycast hits		
 
-				Card current = hit.collider.gameObject.GetComponent<Card> (); //Understand which card gameobject is hit, get it's Card component
+				current = hit.collider.gameObject.GetComponent<Card> (); //Understand which card gameobject is hit, get it's Card component
 
 				if (prevCard != null && prevCard.GetInstanceID () != current.GetInstanceID () && prevCard.GetCardType () == current.GetCardType ()) { //If there is a flipped card before this flip and the flipped card is not the same card and the types of the flipped cards are the same
 				
@@ -232,6 +239,7 @@ public class GameManager : MonoBehaviour {
 			else if (Input.GetKeyDown(KeyCode.Escape)){ //Go back to menu if ESC pressed
 				Application.LoadLevel(0);
 			}
+				
 		}
 
 		if (Input.GetKeyDown (KeyCode.Escape)) { //Player can also go back to the menu mid-game
@@ -247,36 +255,106 @@ public class GameManager : MonoBehaviour {
 		return score;
 	}
 
-	public int flipSlowly(){
-		return 50;
+	//TESTS
+
+	public bool logosvisible(){
+		testobject = GameObject.FindGameObjectWithTag ("test");
+		if (testobject.transform.GetChild (0).gameObject.GetComponent<Renderer> ().sharedMaterial == logo0) {
+			return true;
+		} else
+			return false;
 	}
 
-	public int flipSlowlyFixed(){
-		return 10;
+	public bool logosvisibleIsFixed(){
+		logo0 = Resources.Load ("0", typeof (Material)) as Material;
+		testobject = GameObject.FindGameObjectWithTag ("test");
+		testobject.transform.GetChild (0).gameObject.GetComponent<Renderer> ().sharedMaterial = logo0;
+		if (testobject.transform.GetChild (0).gameObject.GetComponent<Renderer> ().sharedMaterial == logo0) {
+			return true;
+		} else
+			return false;
+	}
+
+	public bool identicalCardsDisappear(){
+		testobject = GameObject.FindGameObjectWithTag ("test");
+		if (testobject.GetComponent<Card> ().Success ()) {
+			return true;
+		} else
+			return false;
+	}
+
+	public bool nonIdenticalCardsFlipBack(){
+		testobject = GameObject.FindGameObjectWithTag ("test");
+		testobject2 = GameObject.FindGameObjectWithTag ("test2");
+		if (testobject.GetInstanceID() != testobject2.GetInstanceID()) {
+			return true;
+		} else
+			return false;
+	}
+
+	public bool getRestartButton(){
+		restart = true;
+		if (restart) {
+			UnityEditor.SceneManagement.EditorSceneManager.OpenScene ("Assets/scene1.unity", UnityEditor.SceneManagement.OpenSceneMode.Additive);		
+		}
+		if (Application.loadedLevel == Application.loadedLevel) {
+			return true;
+		} else
+			return false;
+		
 	}
 
 	public bool gameoverworks(){
-		return false;
+		if (gameOver) {
+			return true;
+		} else
+			return false;
 	}
 
 	public bool gameoverfixed(){
-		return true;
+		for(int i = 0; i < GameObject.FindGameObjectsWithTag ("Card").Length ; i++){
+			Destroy (GameObject.FindGameObjectWithTag("Card"));			
+		}
+		if (GameObject.FindGameObjectsWithTag ("Card").Length == 0) {
+			gameOver = true;
+		}
+		if (gameOver) {
+			return true;
+		} else
+			return false;
 	}
 
 	public bool scoreworks(){
-		return true;
+		gameOver = true;
+		if (gameOver) {
+			SetScore ();
+			return true;
+		} else
+			return false;
 	}
 
 	public bool menuworks(){
-		return true;
+		if (GameObject.FindGameObjectWithTag ("menu") != null) {
+			return true;
+		} else
+			return false;
 	}
 
 	public bool allow3flips(){
-		return true;
+		testobject = GameObject.FindGameObjectWithTag ("test");
+		testobject2 = GameObject.FindGameObjectWithTag ("test2");
+		testobject3 = GameObject.FindGameObjectWithTag ("test3");
+		if (testobject.GetComponent<Card> ().Flip () && testobject2.GetComponent<Card> ().Flip () && testobject3.GetComponent<Card> ().Flip ()) {
+			return true;
+		} else
+			return false;
 	}
 
 	public bool holdscores(){
-		return false;
+		if (scorelist != null) {
+			return true;
+		} else
+			return false;
 	}
 
 }

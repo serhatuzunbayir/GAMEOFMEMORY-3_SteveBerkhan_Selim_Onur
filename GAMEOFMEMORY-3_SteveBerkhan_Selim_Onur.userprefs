@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Assets\Editor\Tests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LoadOnClick.cs">
     <Files>
-      <File FileName="Assets\Card.cs" Line="19" Column="29" />
-      <File FileName="Assets\GameManager.cs" Line="270" Column="26" />
-      <File FileName="Assets\LoadOnClick.cs" Line="59" Column="23" />
-      <File FileName="Assets\Assets\Editor\Tests.cs" Line="170" Column="37" />
+      <File FileName="Assets\Card.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameManager.cs" Line="298" Column="138" />
+      <File FileName="Assets\LoadOnClick.cs" Line="72" Column="130" />
+      <File FileName="Assets\Assets\Editor\Tests.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

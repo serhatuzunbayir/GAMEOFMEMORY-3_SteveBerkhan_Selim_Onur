@@ -25,7 +25,7 @@ public class Card : MonoBehaviour {
 		angle = transform.eulerAngles.z; //Get the angle of the card to rotate smoothly.
 	}
 
-	public void Flip(){
+	public bool Flip(){
 
 		rotation = 1; 
 		if (flipped == true) { //if the card is flipped, the card will flip to the other rotation
@@ -49,6 +49,8 @@ public class Card : MonoBehaviour {
 		} else {
 			gameObject.GetComponent<Collider> ().enabled = true; //Make the card clickable again if unflipped
 		}
+
+		return true;
 	
 	}
 
@@ -64,9 +66,10 @@ public class Card : MonoBehaviour {
 
 	}
 
-	public void Success(){
+	public bool Success(){
 
 		Destroy (gameObject); //If paired successfully, destroy the cards. Bonus -> https://youtu.be/NJzoBmVPeYw?t=2m6s
+		return true;
 
 	}
 
@@ -75,6 +78,23 @@ public class Card : MonoBehaviour {
 		angle = Mathf.LerpAngle (startAngle, targetAngle, (Time.time - startTime) / smooth); //Using the Mathf.LerpAngle method, assign angle to target angle with the smoothed time value.
 		transform.eulerAngles = new Vector3 (0, 0, angle); //Smoothly rotate to the target angle using the transform.eulerAngles method
 	}
+
+	//TESTS
+
+	public bool flipSlowly(){
+		if (smooth < 2) {
+			return true;
+		} else
+			return false;
+	}
+
+	public bool flipSlowlyFixed(){
+		if (smooth >= 2) {
+			return true;
+		} else
+			return false;
+	}
+
 
 
 }

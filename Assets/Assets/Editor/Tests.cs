@@ -35,29 +35,27 @@ public class Tests {
 	[Test]
 	public void logosVisible(){
 		GameManager gamemanager = new GameManager ();
-		bool visible = gamemanager.logo0;
-		Assert.That (visible);
+		Assert.That (gamemanager.logosvisible());
 
 	}
 
 	[Test]
 	public void logosVisibleIsFixed(){
 		GameManager gamemanager = new GameManager ();
-		bool visible = gamemanager.logo0;
-		Assert.That (!visible);
+		Assert.That (gamemanager.logosvisibleIsFixed());
 	}
 
 	[Test]
 	public void identicalCardsDisappear(){
 		GameManager gamemanager = new GameManager ();
-		Assert.IsNull (gamemanager.temp);
+		Assert.That (gamemanager.identicalCardsDisappear());
 
 	}
 
 	[Test]
 	public void nonIdenticalCardsFlipBack(){
 		GameManager gamemanager = new GameManager ();
-		Assert.IsNotNull (!gamemanager.temp);
+		Assert.That (gamemanager.nonIdenticalCardsFlipBack ());
 
 	}
 
@@ -79,8 +77,8 @@ public class Tests {
 
 	[Test]
 	public void restartButton(){
-		LoadOnClick loc = new LoadOnClick ();
-		Assert.That(loc.getRestartButton ());
+		GameManager gamemanager = new GameManager ();
+		Assert.That(gamemanager.getRestartButton ());
 
 
 	}
@@ -95,10 +93,8 @@ public class Tests {
 
 	[Test]
 	public void flipSlowly(){
-		GameManager gamemanager = new GameManager ();
-		int expected = 10;
-		int actual = gamemanager.flipSlowly();
-		Assert.AreEqual (expected, actual);
+		Card card = new Card ();
+		Assert.That (card.flipSlowly ());
 
 
 	}
@@ -106,10 +102,8 @@ public class Tests {
 
 	[Test]
 	public void flipSlowlyIsFixed(){
-		GameManager gamemanager = new GameManager ();
-		int expected = 10;
-		int actual = gamemanager.flipSlowlyFixed();
-		Assert.AreEqual (expected, actual);
+		Card card = new Card ();
+		Assert.That(card.flipSlowlyFixed());
 
 
 	}

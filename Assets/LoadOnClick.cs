@@ -7,6 +7,9 @@ public class LoadOnClick : MonoBehaviour {
 	public GameObject bg;
 	public Sprite sprite1;
 	public Sprite sprite2;
+	public bool startbuttonworked;
+	public bool escapebuttonworked;
+	public bool exitbuttonworked;
 	public int theme;
 	private static bool loaded = false;
 
@@ -21,8 +24,7 @@ public class LoadOnClick : MonoBehaviour {
 		}
 
 	}
-
-
+	 
 
 	public void LoadScene(int level){
 		Application.LoadLevel (level); //When the button clicked, load the game
@@ -42,21 +44,38 @@ public class LoadOnClick : MonoBehaviour {
 
 	public void ExitGame(){
 		Application.Quit (); //When the button clicked, quit the game
+		exitbuttonworked = true;
 	}
 
+	//TESTS
+
 	public bool getStartButton(){
-		return true;
+		UnityEditor.SceneManagement.EditorSceneManager.OpenScene ("Assets/scene1.unity", UnityEditor.SceneManagement.OpenSceneMode.Single);
+		if (UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene().buildIndex == 1) {
+			startbuttonworked = true;
+		}
+		if (startbuttonworked == true) {
+			return true;
+		} else
+			return false;
 	}
 
 	public bool getExitButton(){
-		return true;
-	}
-
-	public bool getRestartButton(){
-		return true;
+		ExitGame ();
+		if (exitbuttonworked == true) {
+			return true;
+		} else
+			return false;
 	}
 
 	public bool getEscapeButton(){
-		return true;
+		UnityEditor.SceneManagement.EditorSceneManager.OpenScene ("Assets/menu.unity", UnityEditor.SceneManagement.OpenSceneMode.Single);
+		if (UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene().buildIndex == 0) {
+			escapebuttonworked = true;
+		}
+		if (escapebuttonworked == true) {
+			return true;
+		} else
+			return false;
 	}
 }
